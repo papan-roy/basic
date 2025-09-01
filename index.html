@@ -4,16 +4,41 @@
   <meta charset="utf-8">
   <title>Picture Demo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>img{max-width:100%;height:auto;display:block}</style>
+  <style>
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 15px;
+    }
+    .block {
+      border: 2px solid #333;
+      padding: 15px;
+      margin: 20px 0;
+    }
+  </style>
 </head>
 <body>
-  <h1>My Picture</h1>
-  <h1>My Picture</h1>
-  <h1>My Picture</h1>
-  <img src="cat.jpg" alt="Cat photo" loading="lazy">
-  <img src="cat.jpg" alt="Cat photo" loading="lazy">
- <h1>My Picture</h1>
-  <img src="cat.jpg" alt="Cat photo" loading="lazy">
+  <h1>My Pictures in Blocks</h1>
+
+  <!-- Block 1 -->
+  <div class="block">
+    <h2>My Picture</h2>
+    <img src="cat.jpg" alt="Cat photo" loading="lazy">
+  </div>
+
+  <!-- Block 2 -->
+  <div class="block">
+    <h2>My Picture</h2>
+    <img src="cat.jpg" alt="Cat photo" loading="lazy">
+  </div>
+
+  <!-- Block 3 -->
+  <div class="block">
+    <h2>My Picture</h2>
+    <img src="cat.jpg" alt="Cat photo" loading="lazy">
+  </div>
 
 </body>
 </html>
+

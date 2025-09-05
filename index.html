@@ -1,44 +1,103 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Picture Demo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Byte Input Demo</title>
   <style>
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-      margin-bottom: 15px;
-    }
-    .block {
-      border: 2px solid #333;
-      padding: 15px;
-      margin: 20px 0;
-    }
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; padding: 2rem; background:#f7f8fa; color:#111; }
+    .card { background:white; border-radius:8px; padding:1.25rem; max-width:420px; margin:0 auto; box-shadow:0 6px 18px rgba(20,20,30,0.06); }
+    label { display:block; margin-bottom:.5rem; font-weight:600; }
+    input[type="text"] { width:100%; padding:.5rem .6rem; font-size:1rem; border:1px solid #d8dbe0; border-radius:6px; box-sizing:border-box; }
+    .row { display:flex; gap:.5rem; margin-top:.75rem; }
+    button { padding:.5rem .9rem; border-radius:6px; border:0; background:#2563eb; color:white; font-weight:600; cursor:pointer; }
+    .output { margin-top:1rem; padding:.6rem; border-radius:6px; background:#f1f5f9; color:#0b1220; min-height:1.6rem; }
+    .error { color:#b91c1c; font-weight:600; margin-top:.5rem; }
+    small { color:#6b7280; display:block; margin-top:.4rem; }
   </style>
 </head>
 <body>
-  <h1>My Pictures in tt tt yyy tt Blocks</h1>
+  <div class="card">
+    <h2>Enter a byte value</h2>
+    <form id="byteForm" autocomplete="off">
+      <label for="byteInput">Byte (-128 to 127)</label>
+      <input id="byteInput" name="byteInput" type="text" inputmode="numeric" placeholder="e.g. 10 or -50"/>
+      <small>Type an integer between -128 and 127 and press Submit.</small>
 
-  <!-- Block 1 -->
-  <div class="block">
-    <h2>My Picture</h2>
-    <img src="cat.jpg" alt="Cat photo" loading="lazy">
+      <div class="row">
+        <button type="submit">Submit</button>
+        <button type="button" id="clearBtn">Clear</button>
+      </div>
+
+      <div id="err" class="error" role="alert" aria-live="polite"></div>
+      <div id="out" class="output" aria-live="polite"></div>
+    </form>
   </div>
 
-  <!-- Block 2 -->
-  <div class="block">
-    <h2>My Picture</h2>
-    <img src="cat.jpg" alt="Cat photo" loading="lazy">
-  </div>
+  <script>
+    const form = document.getElementById('byteForm');
+    const input = document.getElementById('byteInput');
+    const out = document.getElementById('out');
+    const err = document.getElementById('err');
+    const clearBtn = document.getElementById('clearBtn');
 
-  <!-- Block 3 -->
-  <div class="block">
-    <h2>My Picture</h2>
-    <img src="cat.jpg" alt="Cat photo" loading="lazy">
-  </div>
+    function clearMessages() {
+      err.textContent = '';
+      out.textContent = '';
+    }
 
+    function isIntegerString(s) {
+      // allow optional leading + or -, then digits
+      return /^[-+]?\d+$/.test(s.trim());
+    }
+
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      clearMessages();
+      const raw = input.value.trim();
+
+      if (raw === '') {
+        err.textContent = 'Please enter a value.';
+        return;
+      }
+      if (!isIntegerString(raw)) {
+        err.textContent = 'Invalid input — enter an integer (no decimals).';
+        return;
+      }
+
+      // parse as base 10 integer
+      const n = Number(raw);
+      if (!Number.isFinite(n) || !Number.isInteger(n)) {
+        err.textContent = 'Invalid number.';
+        return;
+      }
+
+      if (n < -128 || n > 127) {
+        err.textContent = 'Out of byte range. Enter a value between -128 and 127.';
+        return;
+      }
+
+      // Valid byte — display exactly as entered (preserve sign if present)
+      // Normalize display: show without leading plus sign if user typed "+10" we'll show "10"
+      // But if they typed "-0" we display "0" (byte 0)
+      const display = String(n);
+      out.textContent = display;
+    });
+
+    clearBtn.addEventListener('click', function(){
+      input.value = '';
+      clearMessages();
+      input.focus();
+    });
+
+    // allow Enter key to submit from the input
+    input.addEventListener('keydown', function(e){
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        form.requestSubmit();
+      }
+    });
+  </script>
 </body>
 </html>
 

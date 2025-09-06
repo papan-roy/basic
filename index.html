@@ -21,10 +21,17 @@
     <h2>Enter a byte value</h2>
     <form id="byteForm" autocomplete="off">
       <label for="byteInput">Byte (-128 to 127)</label>
+      <label for="byteInput">Byte (-128 to 127)</label>
       <input id="byteInput" name="byteInput" type="text" inputmode="numeric" placeholder="e.g. 10 or -50"/>
       <small>Type an integer between -128 and 127 and press Submit.</small>
 
       <div class="row">
+        <button type="submit">Submit</button>
+        <button type="button" id="clearBtn">Clear</button>
+      </div>
+
+
+       <div class="row">
         <button type="submit">Submit</button>
         <button type="button" id="clearBtn">Clear</button>
       </div>

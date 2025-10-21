@@ -1,57 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie Express</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Delivery App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <header>
+    <div class="container nav">
+      <h1 class="logo">FoodieExpress</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Menu</a></li>
+          <li><a href="#">Offers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Header Section -->
-    <header>
-        <div class="logo">🍕 Foodie Express</div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Menu</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-text">
+      <h2>Fastest Food Delivery in Your City</h2>
+      <p>Order your favorite food and get it delivered in minutes!</p>
+      <a href="#" class="btn">Order Now</a>
+    </div>
+  </section>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <h1>Fast & Fresh Food Delivered to You!</h1>
-        <p>Order your favorite dishes with just one click.</p>
-        <a href="#" class="btn">Order Now</a>
-    </section>
+  <!-- Categories -->
+  <section class="categories">
+    <h2>Popular Categories</h2>
+    <div class="category-box">
+      <div class="card">🍕 Pizza</div>
+      <div class="card">🍔 Burger</div>
+      <div class="card">🍣 Sushi</div>
+      <div class="card">🍜 Noodles</div>
+    </div>
+  </section>
 
-    <!-- Menu Section -->
-    <section class="menu">
-        <h2>Our Menu</h2>
-        <div class="menu-items">
-            <div class="card">
-                <img src="https://source.unsplash.com/200x150/?burger" alt="Burger">
-                <h3>Classic Burger</h3>
-                <p>₹150</p>
-            </div>
-            <div class="card">
-                <img src="https://source.unsplash.com/200x150/?pizza" alt="Pizza">
-                <h3>Cheese Pizza</h3>
-                <p>₹250</p>
-            </div>
-            <div class="card">
-                <img src="https://source.unsplash.com/200x150/?pasta" alt="Pasta">
-                <h3>White Sauce Pasta</h3>
-                <p>₹180</p>
-            </div>
-        </div>
-    </section>
+  <!-- Featured Dishes -->
+  <section class="menu">
+    <h2>Top Dishes</h2>
+    <div class="menu-grid">
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1601924571462-c37f9ef8bce2" alt="Pizza">
+        <h3>Margherita Pizza</h3>
+        <p>Classic delight with mozzarella cheese and tomato sauce</p>
+        <button class="btn">Order</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1606756790138-73e7b94e6833" alt="Burger">
+        <h3>Cheese Burger</h3>
+        <p>Juicy beef patty with cheddar cheese and veggies</p>
+        <button class="btn">Order</button>
+      </div>
+      <div class="menu-item">
+        <img src="https://images.unsplash.com/photo-1603133872878-684f97a2e3b9" alt="Pasta">
+        <h3>Veg Pasta</h3>
+        <p>Creamy pasta with vegetables and Italian herbs</p>
+        <button class="btn">Order</button>
+      </div>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2025 Foodie Express | All Rights Reserved</p>
-    </footer>
-
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <h3>FoodieExpress</h3>
+      <p>Delivering happiness to your doorstep</p>
+      <p>&copy; 2025 FoodieExpress. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

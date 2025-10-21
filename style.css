@@ -1,124 +1,188 @@
-/* Reset default styles */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #fffaf0;
+  background-color: #fffaf5;
+  color: #333;
 }
 
 /* Header */
 header {
-    background-color: #ff5733;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 50px;
+  background-color: #ff6347;
+  padding: 15px 0;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-header .logo {
-    font-size: 24px;
-    font-weight: bold;
+.container {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: 500;
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-nav a:hover {
-    text-decoration: underline;
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover {
+  color: #ffe4c4;
 }
 
 /* Hero Section */
 .hero {
-    background: url('https://source.unsplash.com/1600x600/?food,restaurant') no-repeat center/cover;
-    text-align: center;
-    color: white;
-    padding: 120px 20px;
+  height: 70vh;
+  background: url('https://images.unsplash.com/photo-1550547660-d9450f859349') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+.hero-text {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 30px;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
 }
 
 .hero p {
-    font-size: 18px;
-    margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
 }
 
 .btn {
-    display: inline-block;
-    background-color: #ff5733;
-    color: white;
-    padding: 12px 25px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .btn:hover {
-    background-color: #ff2e00;
+  background-color: #ff4500;
+}
+
+/* Categories */
+.categories {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.categories h2 {
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.category-box {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff8f0;
+  border: 1px solid #ffccbc;
+  padding: 25px 40px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background-color: #ffe4c4;
 }
 
 /* Menu Section */
 .menu {
-    text-align: center;
-    padding: 50px 20px;
+  text-align: center;
+  padding: 60px 20px;
 }
 
 .menu h2 {
-    color: #333;
-    font-size: 32px;
-    margin-bottom: 30px;
+  margin-bottom: 40px;
+  font-size: 2rem;
 }
 
-.menu-items {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  width: 90%;
+  margin: auto;
 }
 
-.card {
-    background: white;
-    width: 220px;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    padding: 15px;
-    transition: transform 0.3s;
+.menu-item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card:hover {
-    transform: scale(1.05);
+.menu-item img {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 15px;
 }
 
-.card img {
-    width: 100%;
-    border-radius: 10px;
-}
-
-.card h3 {
-    margin: 10px 0 5px;
-}
-
-.card p {
-    color: #ff5733;
-    font-weight: bold;
+.menu-item h3 {
+  margin-bottom: 10px;
+  color: #ff4500;
 }
 
 /* Footer */
 footer {
-    background-color: #222;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 50px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
 }
+
+footer h3 {
+  margin-bottom: 10px;
+}
+
+footer p {
+  margin-bottom: 5px;
+  font-size: 0.95rem;
+}
+

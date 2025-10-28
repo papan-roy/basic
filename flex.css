@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-color: black;
 }
 
 .box{
@@ -16,4 +17,5 @@
 
 .containerA{
     border: 3px solid red;
+    height: 100vh;
 }
